@@ -57,10 +57,22 @@ def not_bad(s):
 def front_back(a, b):
   # +++your code here+++
   size_a = len(a)
-  a_back = a[size_a/2 + 1:]
-  a_front = a[:size_a/2]
+  if len(a)%2: 
+    a_back = a[size_a/2 + 1:]
+    a_front = a[:size_a/2+1]
+  else:
+    a_back = a[size_a/2:]
+    a_front = a[:size_a/2]
+  size_b = len(b)
+  if len(b)%2: 
+    b_back = b[size_b/2 + 1:]
+    b_front = a[:size_b/2 + 1]
+  else:
+    b_back = b[size_b/2 :]
+    b_front = b[:size_b/2]
   
-  return a_front
+
+  return a_front + b_front + a_back + b_back
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
